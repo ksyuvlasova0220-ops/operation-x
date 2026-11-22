@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROJECT: PERFECT GIFT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: sexy, elegant secret-agent dossier — quiet, cinematic, a little playful
+   IDEA: a classified case file handed to an agent: stamped cover, rules of engagement, numbered targets
+   PICTURE: the stamped dossier cover with a wax-red seal and silver chain line
+   COLOUR and TYPE: black ground, wine field, silver hairlines, one red accent; Cormorant titles + Manrope body
+   LAYOUT: one column file; cover, two "forbidden" notices, target cards in a wrapping grid, code word at the bottom */
+:root{color-scheme:dark;--bg:#0c0a0b;--panel:#161214;--wine:#4a0d1a;--wine2:#6e1427;--red:#d1222f;--silver:#c9c7cc;--mute:#9a9599;--line:#2e2629;--ink:#f3f0f1}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Manrope,system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;line-height:1.05;text-wrap:balance;margin:0}
+.cover{background:radial-gradient(120% 90% at 85% 10%,var(--wine2),var(--wine) 45%,#1a0509 100%);position:relative;overflow:hidden}
+.cover .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:center;min-height:min(78vh,620px)}
+.file{color:var(--silver);font-size:14px;margin:0 0 14px}
+h1{font-size:clamp(40px,7vw,64px)}
+h1 em{font-style:italic;font-weight:500;color:var(--silver)}
+.lede{max-width:46ch;color:#e6dfe1;margin:18px 0 0;font-size:17px}
+.stamp{display:inline-block;margin-top:24px;border:2px solid var(--red);color:var(--red);padding:6px 14px;font-weight:700;font-size:14px;transform:rotate(-4deg);border-radius:4px;background:rgba(0,0,0,.25)}
+.seal{width:100%;max-width:300px;justify-self:center}
+section h2{font-size:clamp(30px,4.5vw,44px);margin-bottom:8px}
+.sub{color:var(--mute);margin:0 0 28px}
+.wish{border:1px solid var(--silver);border-radius:14px;padding:clamp(22px,3vw,34px);background:linear-gradient(160deg,rgba(201,199,204,.08),transparent)}
+.wish b{color:var(--silver);font-size:14px}
+.wish h2{margin:8px 0 14px}
+.wish p{margin:0 0 10px;max-width:62ch;color:#e6dfe1;font-size:17px}
+.wish p:last-child{margin:0;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;min-height:48px;margin-top:22px;padding:0 22px;background:var(--red);color:#fff;font-weight:700;text-decoration:none;border-radius:99px}.btn:hover{background:#b01a26}.btn:focus-visible{outline:2px solid var(--silver);outline-offset:3px}
+.blurwall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.blurwall div{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000}.blurwall img{display:block;width:100%;aspect-ratio:3/4.2;object-fit:cover;opacity:.75}.blurwall span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);border:2px solid var(--red);color:var(--red);font-weight:700;font-size:14px;padding:4px 10px;border-radius:4px;background:rgba(0,0,0,.45);white-space:nowrap}
+@media(max-width:700px){.blurwall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.redact{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}.redact div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:16px}.redact b{color:var(--silver);min-width:56px}.redact span{flex:1;height:22px;background:repeating-linear-gradient(90deg,#000 0 70%,transparent 70% 74%);border-radius:3px;box-shadow:0 0 0 1px #2a2226}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.rule{border:1px solid var(--red);background:linear-gradient(180deg,rgba(209,34,47,.12),transparent);border-radius:14px;padding:22px}
+.rule b{display:block;color:var(--red);font-size:14px;margin-bottom:6px}
+.rule h3{font-family:"Cormorant Garamond",serif;font-size:26px;margin:0 0 8px;line-height:1.1}
+.rule p{margin:0;color:#ddd6d8}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.phs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:#000}.phs.one{grid-template-columns:1fr}.phs.one img{aspect-ratio:4/3}.phs img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.num{color:var(--mute);font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pri{color:var(--red);font-weight:700;border:1px solid var(--red);border-radius:99px;padding:1px 10px;white-space:nowrap}
+.card h3{font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.1;margin:0}
+.card p{margin:0;color:#cfc8cb;font-size:15px}
+.card a{color:var(--silver)}
+.code{background:#000;text-align:center;border-top:1px solid var(--line)}
+.code .w{font-family:"Cormorant Garamond",serif;font-size:clamp(48px,10vw,88px);letter-spacing:.12em;color:var(--silver);margin:10px 0}
+.code p{color:#cfc8cb;margin:0 auto 14px;max-width:56ch;font-size:17px}
+.code .final{font-size:clamp(34px,6vw,56px);color:var(--silver);margin:6px 0 22px}
+.code .big{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,3vw,28px);color:var(--ink);line-height:1.25}
+.code small{display:block;margin-top:28px;color:var(--red);font-size:14px;font-weight:700}
+@media(max-width:700px){.cover .wrap{grid-template-columns:1fr;min-height:0}.seal{max-width:200px;order:-1;justify-self:start}}
+@media(prefers-reduced-motion:no-preference){.stamp{animation:in .6s .3s both}@keyframes in{from{opacity:0;transform:rotate(-4deg) scale(1.4)}}}
+</style>
+</head>
+<body>
+
+<header class="band cover">
+  <div class="wrap">
+    <div>
+      <p class="file">OPERATION: X · досье № 06 · доступ: все агенты</p>
+      <h1>PROJECT:<br><em>Perfect Gift</em></h1>
+      <p class="lede">Агент, ты получила доступ к засекреченному списку желаний именинницы. День X — 28 ноября. Выбрала цель — поставь галочку в таблице брони, чтобы подарки не повторились. Кто что дарит — не раскрываем.</p>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/12hK1qGgH7NTLRDuhyg7VjC-NC_YRfBlQ_q9x4nimFic/edit?usp=sharing" target="_blank" rel="noopener">Забронировать подарок →</a><br><span class="stamp">Совершенно секретно</span>
+    </div>
+    <svg class="seal" viewBox="0 0 300 300" aria-hidden="true">
+      <defs>
+        <radialGradient id="wax" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ff4b55"/><stop offset=".55" stop-color="#b3101d"/><stop offset="1" stop-color="#5c0610"/></radialGradient>
+        <linearGradient id="silv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f4f6"/><stop offset="1" stop-color="#8d8a91"/></linearGradient>
+      </defs>
+      <rect x="40" y="36" width="210" height="250" rx="10" fill="#0d0a0b" transform="rotate(6 145 160)"/>
+      <rect x="40" y="30" width="210" height="250" rx="10" fill="#1d1719" stroke="#3a3034"/>
+      <g stroke="#3a3034" stroke-width="3" stroke-linecap="round"><line x1="68" y1="70" x2="200" y2="70"/><line x1="68" y1="92" x2="222" y2="92"/><line x1="68" y1="114" x2="180" y2="114"/><line x1="68" y1="236" x2="150" y2="236"/></g>
+      <path d="M20 250 Q 150 200 285 255" fill="none" stroke="url(#silv)" stroke-width="3" stroke-dasharray="7 5"/>
+      <ellipse cx="152" cy="178" rx="62" ry="58" fill="#3a0309" opacity=".6"/>
+      <path d="M152 118c22 0 28 8 44 12 14 4 18 20 16 36 6 12 4 28-8 38-6 14-24 22-40 20-18 6-38 0-48-12-16-4-24-22-20-38-6-14 0-30 12-38 8-14 26-18 44-18z" fill="url(#wax)"/>
+      <circle cx="152" cy="174" r="34" fill="none" stroke="#ff8f95" stroke-opacity=".45" stroke-width="2"/>
+      <text x="152" y="190" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="46" font-weight="700" fill="#ffd9dc" fill-opacity=".9">X</text>
+    </svg>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <div class="wish">
+      <b>Главное задание для всех агентов</b>
+      <h2>Особое пожелание именинницы</h2>
+      <p>Каждому агенту — подготовить творческое поздравление. Даже если это будет письмо, написанное от руки, — это будет идеально.</p>
+      <p>Ещё одна идея: напечатанные фото с нами или фотоальбом — общие моменты, которые можно держать в руках.</p>
+      <p>Время — главный язык любви. Поэтому важен не столько подарок, сколько то, что в этот день вы рядом.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2>Запрещённые операции</h2>
+    <p class="sub">Прочитать до выбора подарка. Нарушение карается… просто не надо.</p>
+    <div class="rules">
+      <div class="rule">
+        <b>Ограничение</b>
+        <h3>Не дарим цветы</h3>
+        <p>Максимум один букет на всех. Если знаешь, что кто-то хочет подарить цветы, предложи отправить их через неделю или две. Аня понимает эту логику.</p>
+      </div>
+      <div class="rule">
+        <b>Табу</b>
+        <h3>Никаких сертификатов на массаж и спа</h3>
+        <p>Не надо, пожалуйста 😅</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2>Цели операции</h2>
+    <p class="sub">Красная метка — особые пожелания именинницы. Выбрала — отметь в <a href="https://docs.google.com/spreadsheets/d/12hK1qGgH7NTLRDuhyg7VjC-NC_YRfBlQ_q9x4nimFic/edit?usp=sharing" target="_blank" rel="noopener" style="color:var(--silver)">таблице брони</a>.</p>
+    <div class="grid" id="targets"></div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2>Дресс-код: засекречено</h2>
+    <p class="sub">Среди вас есть агент, который выдаст информацию о дресс-коде. Ждите указаний от него.</p>
+    <div class="blurwall">
+      <div><img src="img/blur_dress.jpg" alt="Засекреченное фото"><span>Classified</span></div>
+      <div><img src="img/blur_shorts.jpg" alt="Засекреченное фото"><span>Classified</span></div>
+      <div><img src="img/blur_holsters.jpg" alt="Засекреченное фото"><span>Classified</span></div>
+      <div><img src="img/blur_cargo.jpg" alt="Засекреченное фото"><span>Classified</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2>Время и место: засекречено</h2>
+    <p class="sub">Координаты операции у другого агента. Ждите указаний от него.</p>
+    <div class="redact">
+      <div><b>Время</b><span></span></div>
+      <div><b>Место</b><span></span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="band code">
+  <div class="wrap">
+    <p class="file">Финальное донесение · OPERATION: X</p>
+    <h2 class="final">Помните главное</h2>
+    <p class="big">Самое ценное — это время и то, что мы есть друг у друга.</p>
+    <p>Я очень хочу, чтобы в этот день случилось много сюрпризов. И самый главный — от меня.</p>
+    <p>Настраивайтесь побеждать, спорить и разгадывать: вам придётся сыграть в игру прямо внутри дня рождения. Вы придёте не скучать. Вы придёте выяснять, что случилось и кто среди нас обманщик.</p>
+    <small>До встречи 28 ноября, агенты. Никому ни слова.</small>
+  </div>
+</footer>
+
+<script>
+{
+const T=[
+ {t:"Сертификат на английский",d:"Занятия у моего преподавателя. Контакт в Telegram: @ennassty.",l:"https://t.me/ennassty",ln:"Написать преподавателю",p:0},
+ {t:"Камера DJI Osmo Pocket",d:"Какую модель лучше взять, знает Радик — уточняйте у него.",p:0},
+ {t:"LEGO",d:"Набор LEGO (только не машинки).",p:0},
+ {t:"Курсы",d:"Ведущий, SEO-оптимизация или ивенты.",p:1},
+ {t:"Сертификат на сальто",d:"Чтобы научиться делать сальто. Лучше на несколько занятий.",p:0},
+ {t:"Сертификат на танцы к Максу",d:"Офлайн-занятия у Макса.",l:"https://www.instagram.com/mxkuznetsov",ln:"Instagram Макса",p:0},
+ {t:"Чемодан",d:"Новый, качественный, большого размера. По возможности серебристый или нежно-розовый. Главное — качество.",imgs:["img/suitcase1.jpg","img/suitcase2.jpg"],p:1},
+ {t:"Натуральные украшения",d:"Серебро. Натуральные — это не про малахит, а про серебро.",p:0},
+ {t:"Часы",d:"Серебристые, в стиле как на фото.",imgs:["img/watch.jpg"],p:1},
+ {t:"Футболка «I miss my Bali life»",d:"Copenhagen.",p:0},
+ {t:"Косметичка",d:"Мягкая, в стиле как на фото. Главное — не белая (иначе будет всегда грязной).",imgs:["img/bag1.jpg","img/bag2.jpg"],p:0},
+ {t:"Научиться играть на пианино",d:"Занятия или курс по фортепиано. Контакт: @alexxosipov_dev (Ксюша узнала, что он точно обучает, но о подробностях цены он почему-то решил не распространяться. Если вдруг нет других преподавателей, можно всё-таки написать Саше).",l:"https://t.me/alexxosipov_dev",ln:"Написать Саше",p:1},
+ {t:"Тест VO₂ Max",d:"Очень хочу пройти этот тест. Нашла в интернете: Elevate Labs Bali в Улувату (внутри Luma Biohacking Resort), около 1 200 000 IDR за тест, готова съездить. Есть и ближе — в Omni в Сесехе.",ls:[["https://elevatelabsbali.com/locations/uluwatu.html","Elevate Labs, Улувату"],["https://omni.club","Omni, Сесех"]],p:1},
+ {t:"Баня и профессиональное парение",d:"Очень люблю баню и парение с пармастером. В Убуде есть невероятная баня — однажды мы дарили туда сертификат Саше Пентиной. Но контакт я найти не смогла. Если знаете, где это, или знаете хорошего пармастера — это будет отличный подарок.",p:0},
+ {t:"Пижама или кружевное бельё",d:"Красивая пижама или красивое кружевное нижнее бельё.",p:0},
+ {t:"Что-то для творчества",d:"Люблю писать на бумаге, раскрашивать раскраски и всё такое. Классным подарком будет что-то для творчества: стильные картины по номерам, раскраски, красивые блокноты и так далее.",p:0}
+];
+document.getElementById('targets').innerHTML=T.map((x,i)=>`
+ <article class="card">${x.imgs?`<div class="phs${x.imgs.length<2?' one':''}">${x.imgs.map(u=>`<img src="${u}" alt="Референс: ${x.t}">`).join('')}</div>`:''}
+  <div class="body">
+   <div class="num"><span>Цель № ${String(i+1).padStart(2,'0')}</span>${x.p?'<span class="pri">особое желание</span>':''}</div>
+   <h3>${x.t}</h3><p>${x.d}</p>${x.l?`<p><a href="${x.l}" target="_blank" rel="noopener">${x.ln} →</a></p>`:''}${x.ls?x.ls.map(([u,n])=>`<p><a href="${u}" target="_blank" rel="noopener">${n} →</a></p>`).join(''):''}
+  </div></article>`).join('');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPERATION: X — дресс-код</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: sexy, elegant secret-agent briefing on what to wear
+   IDEA: a classified field-kit file: cover, kit formula, photo evidence, code word
+   PICTURE: the four reference photos as a tall evidence wall
+   COLOUR and TYPE: black ground, wine cover, silver hairlines, red accent; Cormorant titles + Manrope body
+   LAYOUT: cover, three-option formula, photo wall, accessories list, code word footer */
+:root{color-scheme:dark;--bg:#0c0a0b;--panel:#161214;--wine:#4a0d1a;--wine2:#6e1427;--red:#d1222f;--silver:#c9c7cc;--mute:#9a9599;--line:#2e2629;--ink:#f3f0f1}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Manrope,system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;line-height:1.05;text-wrap:balance;margin:0}
+.cover{background:radial-gradient(120% 90% at 85% 10%,var(--wine2),var(--wine) 45%,#1a0509 100%)}
+.file{color:var(--silver);font-size:14px;margin:0 0 14px}
+h1{font-size:clamp(40px,7.5vw,68px)}
+h1 em{font-style:italic;font-weight:500;color:var(--silver)}
+.lede{max-width:50ch;color:#e6dfe1;margin:18px 0 0;font-size:17px}
+.stamp{display:inline-block;margin-top:24px;border:2px solid var(--red);color:var(--red);padding:6px 14px;font-weight:700;font-size:14px;transform:rotate(-4deg);border-radius:4px;background:rgba(0,0,0,.25)}
+h2{font-size:clamp(30px,4.5vw,44px);margin-bottom:8px}
+.sub{color:var(--mute);margin:0 0 26px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.opt{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.opt b{color:var(--red);font-size:14px}
+.opt h3{font-size:26px;margin:6px 0 8px}
+.opt p{margin:0;color:#cfc8cb}
+.wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.wall figure{margin:0;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--line)}
+.wall img{display:block;width:100%;aspect-ratio:3/4.4;object-fit:cover}
+.wall figcaption{padding:10px 12px;font-size:14px;color:var(--mute)}
+.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px 28px;padding:0;margin:0;list-style:none}
+.kit li{border-top:1px solid var(--line);padding:12px 0}
+.kit strong{display:block;color:var(--silver)}
+.kit span{color:var(--mute);font-size:15px}
+.code{background:#000;text-align:center;border-top:1px solid var(--line)}
+.code .w{font-family:"Cormorant Garamond",serif;font-size:clamp(48px,10vw,88px);letter-spacing:.12em;color:var(--silver);margin:10px 0}
+.code p{color:var(--mute);margin:0 auto;max-width:52ch}
+@media(max-width:820px){.wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:no-preference){.stamp{animation:in .6s .3s both}@keyframes in{from{opacity:0;transform:rotate(-4deg) scale(1.4)}}}
+</style>
+</head>
+<body>
+
+<header class="band cover">
+  <div class="wrap">
+    <p class="file">OPERATION: X · досье № 01 · доступ: STYLIST</p>
+    <h1>Sexy secret agent.<br><em>Total black.</em></h1>
+    <p class="lede">Агент, это твоя экипировка на 28 ноября. Сексуально, собранно, элегантно — как героиня шпионского кино, а не костюм на маскарад. Только чёрный.</p>
+    <span class="stamp">Совершенно секретно</span>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Формула образа</h2>
+    <p class="sub">Выбери одну основу и добавь 2–3 детали из экипировки.</p>
+    <div class="opts">
+      <div class="opt"><b>Вариант 1</b><h3>Облегающее чёрное платье</h3><p>Мини или миди по фигуре, воротник-стойка или вырез. Каблуки или грубые ботинки.</p></div>
+      <div class="opt"><b>Вариант 2</b><h3>Топ + шорты</h3><p>Чёрный топ или майка, короткие чёрные шорты, ремень, ботинки.</p></div>
+      <div class="opt"><b>Вариант 3</b><h3>Майка + карго</h3><p>Обтягивающая майка, широкие тёмные карго, ремень и грубая обувь — агент на полевом задании.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2>Вещественные доказательства</h2>
+    <p class="sub">Референсы для вдохновения. Повторять один в один не нужно.</p>
+    <div class="wall">
+      <figure><img src="img/dress.jpg" alt="Чёрное облегающее мини-платье с вырезом, очки, лодочки"><figcaption>Платье по фигуре + очки</figcaption></figure>
+      <figure><img src="img/shorts.jpg" alt="Чёрный топ на молнии, шорты и ботинки"><figcaption>Топ + шорты + ботинки</figcaption></figure>
+      <figure><img src="img/holsters.jpg" alt="Чёрная майка, шорты, кобуры на бёдрах, перчатки, очки"><figcaption>Кобуры, перчатки, коса</figcaption></figure>
+      <figure><img src="img/cargo.jpg" alt="Тёмная майка и широкие карго с ремнём"><figcaption>Майка + карго</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2>Экипировка</h2>
+    <p class="sub">По желанию — всё, что делает образ шпионским.</p>
+    <ul class="kit">
+      <li><strong>Тёмные очки</strong><span>узкие, прямоугольные или «визор»</span></li>
+      <li><strong>Ремень</strong><span>с металлической пряжкой или тактический</span></li>
+      <li><strong>Кобуры на бёдра</strong><span>или портупея — для смелых</span></li>
+      <li><strong>Перчатки</strong><span>кожаные, можно без пальцев</span></li>
+      <li><strong>Обувь</strong><span>грубые ботинки или острые лодочки</span></li>
+      <li><strong>Волосы</strong><span>гладкая укладка, хвост или тугая коса</span></li>
+      <li><strong>Украшения</strong><span>серебро, минимум</span></li>
+      <li><strong>Акцент</strong><span>красная помада — по желанию</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="band code">
+  <div class="wrap">
+    <p class="file">Кодовое слово доступа</p>
+    <div class="w">BLACK</div>
+    <p>Агенты, вскрывшие этот файл: отправьте кодовое слово Master Controller. Ссылку в общий чат не пересылать.</p>
+  </div>
+</footer>
+</body>
+</html>
