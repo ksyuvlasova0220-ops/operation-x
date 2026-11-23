@@ -42,7 +42,8 @@ small{display:block;margin-top:28px;color:#6d676a;font-size:13px}
 <script>
 {
 const f=document.getElementById('f'),inp=document.getElementById('code'),msg=document.getElementById('msg'),btn=document.getElementById('go');
-const norm=s=>s.toUpperCase().replace(/[^A-ZА-ЯЁ0-9]/g,'');
+const LAT={'А':'A','В':'B','Е':'E','Ё':'E','К':'K','М':'M','Н':'H','О':'O','Р':'P','С':'C','Т':'T','У':'Y','Х':'X'};
+const norm=s=>s.toUpperCase().replace(/[АВЕЁКМНОРСТУХ]/g,c=>LAT[c]).replace(/[^A-ZА-ЯЁ0-9]/g,'');
 async function hash(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('').slice(0,16)}
 f.addEventListener('submit',async e=>{
   e.preventDefault();const c=norm(inp.value);if(!c)return;
