@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>OPERATION: X — досье COBRA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,500&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: classified briefing card — calm, exact, a little theatrical
+   IDEA: the safehouse coordinates slip handed to an agent
+   PICTURE: a large time + place block with a pin drawn as a wax seal
+   COLOUR and TYPE: black, wine, silver, red accent; Cormorant + Manrope
+   LAYOUT: one column: time, place, map button, entry protocol */
+:root{color-scheme:dark;--bg:#0c0a0b;--panel:#161214;--wine:#4a0d1a;--wine2:#6e1427;--red:#d1222f;--silver:#c9c7cc;--mute:#9a9599;--line:#2e2629;--ink:#f3f0f1}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Manrope,system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(28px,5vw,64px) max(5vw,18px)}
+.wrap{max-width:760px;margin:0 auto}
+.cover{background:radial-gradient(120% 90% at 85% 10%,var(--wine2),var(--wine) 45%,#1a0509 100%)}
+.file{color:var(--silver);font-size:14px;margin:0 0 12px}
+h1,h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(40px,9vw,64px)}
+h1 em{font-style:italic;font-weight:500;color:var(--silver)}
+.slip{margin-top:28px;background:rgba(0,0,0,.35);border:1px solid rgba(201,199,204,.25);border-radius:16px;padding:22px;display:grid;gap:18px}
+.row b{display:block;color:var(--mute);font-size:14px;font-weight:600}
+.row span{font-family:"Cormorant Garamond",serif;font-size:clamp(30px,7vw,44px);font-weight:700;line-height:1.1}
+.row small{display:block;color:#cfc8cb;font-size:15px;margin-top:4px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:54px;margin-top:6px;background:var(--red);color:#fff;font-weight:700;text-decoration:none;border-radius:99px}
+.stamp{display:inline-block;margin-top:22px;border:2px solid var(--red);color:var(--red);padding:6px 14px;font-weight:700;font-size:14px;transform:rotate(-4deg);border-radius:4px}
+h2{font-size:clamp(28px,5vw,38px);margin-bottom:14px}
+ol{margin:0;padding-left:22px;display:grid;gap:10px;color:#e6dfe1}
+.note{color:var(--mute);margin-top:22px}
+footer{text-align:center;background:#000;border-top:1px solid var(--line)}
+footer p{color:var(--red);font-weight:700;margin:0}
+.role{display:inline-block;margin-top:18px;padding:8px 18px;border-radius:8px;font-weight:700;font-size:20px}.agent{background:#c9c7cc;color:#111}.mole{background:#d1222f;color:#fff}.box{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.box b{display:block;color:var(--mute);font-size:14px;margin-bottom:6px}.box p{margin:0;font-size:18px}</style></head><body>
+<header class="band cover"><div class="wrap"><p class="file">OPERATION: X · личное досье · день X</p><h1>Позывной:<br><em>COBRA</em></h1><span class="role agent">Ты — АГЕНТ</span></div></header>
+<section class="band"><div class="wrap"><div class="box"><b>Твоё личное задание на вечер</b><p>Узнай у трёх агентов по одной истории про именинницу. Лучшую расскажи в конце вечера.</p><p class="note">Выполнишь — получишь звание «Агент высшего класса».</p></div>
+<div class="box"><b>Улика о кротах</b><p>В кодах обоих кротов есть буква E.</p><p class="note">Делись уликой с теми, кому доверяешь. Но помни: крот тоже может спросить.</p></div>
+<div class="box"><b>Миссия всех агентов</b><p>Среди нас два крота из организации «ХАОС». До финального голосования вычисли хотя бы одного.</p></div><p class="note" style="margin-top:24px">Никому не показывай экран. Закрой страницу, когда прочитаешь.</p></div></section>
+<footer class="band"><p>Штаб наблюдает. Удачи, агент.</p></footer></body></html>
